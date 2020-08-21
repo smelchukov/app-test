@@ -31,16 +31,8 @@ metadata:
     job: deploy-service
 spec:
   containers:
-  - name: git
-    image: alpine/git:v2.26.2
-    command: ["cat"]
-    tty: true
   - name: helm
     image: alpine/helm:3.2.4
-    command: ["cat"]
-    tty: true
-  - name: kubectl
-    image: bitnami/kubectl:1.18.8
     command: ["cat"]
     tty: true
 """
@@ -54,7 +46,7 @@ spec:
                 container('helm') {
                     script {
                         sh "helm repo add stable https://kubernetes-charts.storage.googleapis.com"
-                        sh "helm upgrade --install redis stable/redis"
+                        sh "helm upgrade --install redis stable/mysql"
                     }
                 }
             }
