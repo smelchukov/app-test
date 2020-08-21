@@ -45,8 +45,9 @@ spec:
             steps {
                 container('helm') {
                     script {
+                        sh "env"
                         sh "helm repo add stable https://kubernetes-charts.storage.googleapis.com"
-                        sh "helm upgrade --install redis stable/mysql"
+                        sh "helm upgrade --install redis stable/mysql --namespace prod" 
                     }
                 }
             }
