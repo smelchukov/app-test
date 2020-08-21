@@ -47,7 +47,7 @@ spec:
                     script {
                         sh "env"
                         sh "helm repo add stable https://kubernetes-charts.storage.googleapis.com"
-                        sh "helm upgrade --install redis stable/mysql --namespace prod" 
+                        sh "helm upgrade --install mysql stable/mysql --namespace prod" 
                     }
                 }
             }
